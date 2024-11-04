@@ -4,10 +4,15 @@
 using namespace std;
 
 int main() {
-   int posX  = 4;
-   int posY = 4;
-
+   int posX;
+   int posY;
    board master;
+
+   printBoard();
+   cout << "Enter move (X Y): ";
+   cin >> posX;
+   cin >> posY;
+
    buildBoard(master, posX, posY);
    printBoard(master);
 }

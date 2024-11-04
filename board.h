@@ -29,6 +29,16 @@ void printBoard(board& master) {
    }
 }
 
+void printBoard() {
+   system("clear");
+   for(int i = 0; i < BOARD_SIZE; i++) {
+     for(int j = 0; j < BOARD_SIZE; j++) {
+        cout << '+';
+     }
+     cout << endl;
+   }
+}
+
 void buildBoard(board& master, int posX, int posY) {
    int x;
    int y;
