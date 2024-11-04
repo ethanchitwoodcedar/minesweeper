@@ -10,6 +10,7 @@ using namespace std;
 struct board {
    char front[BOARD_SIZE][BOARD_SIZE];
    char back[BOARD_SIZE][BOARD_SIZE];
+   const int SIZE = BOARD_SIZE;
 };
 
 void printBoard(board& master) {
