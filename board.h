@@ -13,7 +13,7 @@ struct board {
    const int SIZE = BOARD_SIZE;
 };
 
-void printBoard(board& master) {
+void printBoard(board &master) {
    system("clear");
 
    for(int i = 0; i < BOARD_SIZE; i++) {
@@ -39,7 +39,31 @@ void printBoard() {
    }
 }
 
-void buildBoard(board& master, int posX, int posY) {
+void findSum(board &master, int x, int y) {
+   if(x > 0 && x < (BOARD_SIZE - 1) && y > 0 && y < (BOARD_SIZE - 1)) {
+      return master.back[x - 1][y - 1] + master.back[x - 1][y]
+                  + master.back[x - 1][y + 1] + master.back[x][y - 1] + master.back[x][y + 1] 
+                  + master.back[x + 1][y - 1] + master.back[x + 1][y] + master.back[x + 1][y + 1];
+   }
+   else if(x == 0 && y == 0) {
+      return master.back[x + 1][y] + master.back[x + 1][y - 1] + master.back[x][y - 1];
+   }
+   else if(x == 0 && y == BOARD_SIZE - 1) {
+      return master.back[x + 1][y] + master.back[x + 1][y + 1] + master.back[x][y + 1];
+   }
+   else if(x == BOARD_SIZE -1 && y == 0) {
+      return master.back[x + 1][y] + master.back[x + 1][y + 1] + master.back[x][y + 1];
+   }
+   else if(x == BOARD_SIZE - 1 && y == BOARD_SIZE - 1) {
+      return master.back[x + 1][y] + master.back[x + 1][y + 1] + master.back[x][y + 1];
+   }
+
+
+
+
+}
+
+void buildBoard(board &master, int posX, int posY) {
    int x;
    int y;
    srand(time(0));
