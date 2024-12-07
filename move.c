@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include "board.h"
 
 void move(board &master, int x, int y) {

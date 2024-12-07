@@ -1,7 +1,6 @@
-#include <iostream>
-#include "board.h"
+#include <stdio.h>
+#include "board.c"
 
-using namespace std;
 
 int main() {
    int posX;
@@ -9,9 +8,9 @@ int main() {
    board master;
 
    printBoard();
-   cout << "Enter move (X Y): ";
-   cin >> posX;
-   cin >> posY;
+   printf("Enter move (X Y): ");
+   posX = fgetc();
+   posY = fgetc();
 
    buildBoard(master, posX, posY);
    printBoard(master);

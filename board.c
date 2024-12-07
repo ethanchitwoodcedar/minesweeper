@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -19,13 +19,13 @@ void printBoard(board &master) {
    for(int i = 0; i < BOARD_SIZE; i++) {
       for(int j = 0; j < BOARD_SIZE; j++) {
          if(master.front[i][j] == '+') {
-            cout << '+';
+            printf('+');
          }
          else {
-            cout << master.back[i][j];
+            printf(master.back[i][j]);
          }
       }
-      cout << endl;
+      printf("\n");
    }
 }
 
@@ -33,9 +33,9 @@ void printBoard() {
    system("clear");
    for(int i = 0; i < BOARD_SIZE; i++) {
      for(int j = 0; j < BOARD_SIZE; j++) {
-        cout << '+';
+        printf("+");
      }
-     cout << endl;
+     printf("\n");
    }
 }
 
