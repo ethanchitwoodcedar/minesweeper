@@ -1,17 +1,40 @@
-#include <stdio.h>
-#include "board.c"
+// Minesweeper written in c++
+// made by Ethan Chitwood.
+#include "board.h"
 
+using namespace std;
 
 int main() {
-   int posX;
-   int posY;
-   board master;
+	int x;
+	int y;
+	bool hasLost = false;
+	Board* board = new Board;
 
-   printBoard();
-   printf("Enter move (X Y): ");
-   posX = fgetc();
-   posY = fgetc();
+	cout << *board << endl;
+	cout << "enter move (x, y): ";
+	cin >> x >> y;
+	while (board->peak(x, y) != ' ') {
+		delete board;
+		board = new Board;
+	}
+	board->move(y, x);
+	
+	while (!hasLost) {
+		cout << *board << endl;
+		cout << "enter move (x, y): ";
+		cin >> x >> y;
+		hasLost = board->move(y, x);
+		if (board->won()) {
+			break;
+		}
+	}
 
-   buildBoard(master, posX, posY);
-   printBoard(master);
+	if (hasLost) {
+		cout << *board << endl << "You lost\n";
+	}
+	else {
+		cout << *board << endl << "You won\n";
+	}
+
+	return 0;
 }
