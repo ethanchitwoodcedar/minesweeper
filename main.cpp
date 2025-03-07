@@ -1,6 +1,6 @@
 // Minesweeper written in c++
 // made by Ethan Chitwood.
-#include "board.h"
+#include "Board.h"
 
 using namespace std;
 
