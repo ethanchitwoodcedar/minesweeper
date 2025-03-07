@@ -108,7 +108,7 @@ int Board::getSquareValue(const int x, const int y) const {
 }
 
 ostream& operator<<(ostream& out, const Board &board) {
-	system("cls");
+	system("cls"); // use "clear" for unix like operating systems
 
     out << "X0 1 2 3 4 5 6 7 8\n";
 	for (int i = 0; i < BOARD_SIZE; i++) {
