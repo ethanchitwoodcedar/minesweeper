@@ -72,7 +72,7 @@ void Board::reveal(int x, int y) {
         front[x][y] == 'o') {
         return;
     }
-    cout << x << " " << y << endl;
+    
     front[x][y] = 'o';
 
     if (back[x][y] == ' ') {
